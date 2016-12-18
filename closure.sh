@@ -14,11 +14,10 @@ OPTS=(
   $(find node_modules/@angular/{core,common,compiler,platform-browser}/index.js)
   $(find node_modules/@angular/{core,common,compiler,platform-browser}/src -name "*.js")
   $(find built -name "*.js")
-  "--entry_point=./built/src/main.aot.js"
+  "--entry_point=./built/src/main.js"
 )
 
-set -ex
-java -jar node_modules/google-closure-compiler/compiler.jar $(echo ${OPTS[*]})
+java -jar node_modules/google-closure-compiler/compiler.jar $(echo ${OPTS[*]}) > /dev/null 2>&1
 rm -rf aot built
 gzip --keep -f dist/bundle.js
 bro --force --quality 10 --input dist/bundle.js --output dist/bundle.js.brotli

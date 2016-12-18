@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf aot built dist && find ./src -name '*.json' -delete && find ./src -name '*ngfactory*' -delete",
-    "build": "ngc -p tsconfig.json && ngc -p tsconfig.aot.json && ./closure.sh"
+    "build": "ngc && ./closure.sh"
   },
   "repository": {
     "type": "git",

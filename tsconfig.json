@@ -8,7 +8,7 @@
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "outDir": "./dist",
+    "outDir": "./built",
     "rootDir": ".",
     "typeRoots": [
       "node_modules/@types"
@@ -18,7 +18,10 @@
     "src/main.ts"
   ],
   "angularCompilerOptions": {
-    "genDir": "aot",
-    "skipMetadataEmit": true
-  }
+    "annotationsAs": "static fields",
+    "annotateForClosureCompiler": true
+  },
+  "include": [
+    "src/app/**/*.ts"
+  ]
 }
