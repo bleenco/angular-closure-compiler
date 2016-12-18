@@ -34,7 +34,7 @@
     "@angular/router": "alexeagle/router-builds",
     "@angular/tsc-wrapped": "alexeagle/tsc-wrapped-builds",
     "google-closure-compiler": "^20161201.0.0",
-    "rxjs": "^5.0.1",
+    "rxjs": "5.0.0-rc.4",
     "typescript": "2.0.10",
     "zone.js": "github:angular/zone.js"
   }
