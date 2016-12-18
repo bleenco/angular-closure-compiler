@@ -1,0 +1,41 @@
+{
+  "name": "angular-closure-compiler",
+  "version": "0.0.0",
+  "description": "Angular Closure Compiler Test",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf aot built dist && find ./src -name '*.json' -delete && find ./src -name '*ngfactory*' -delete",
+    "build": "ngc -p tsconfig.json && ngc -p tsconfig.aot.json && ./closure.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkuri/angular-closure-compiler.git"
+  },
+  "keywords": [
+    "Angular",
+    "Closure"
+  ],
+  "author": "Jan Kuri <jkuri88@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jkuri/angular-closure-compiler/issues"
+  },
+  "homepage": "https://github.com/jkuri/angular-closure-compiler#readme",
+  "dependencies": {
+    "@angular/common": "alexeagle/common-builds",
+    "@angular/compiler": "alexeagle/compiler-builds",
+    "@angular/compiler-cli": "alexeagle/compiler-cli-builds",
+    "@angular/core": "alexeagle/core-builds",
+    "@angular/forms": "alexeagle/forms-builds",
+    "@angular/http": "alexeagle/http-builds",
+    "@angular/platform-browser": "alexeagle/platform-browser-builds",
+    "@angular/platform-browser-dynamic": "alexeagle/platform-browser-dynamic-builds",
+    "@angular/platform-server": "alexeagle/platform-server-builds",
+    "@angular/router": "alexeagle/router-builds",
+    "@angular/tsc-wrapped": "alexeagle/tsc-wrapped-builds",
+    "google-closure-compiler": "^20161201.0.0",
+    "rxjs": "^5.0.1",
+    "typescript": "2.0.10",
+    "zone.js": "github:angular/zone.js"
+  }
+}
