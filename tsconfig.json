@@ -1,27 +1,27 @@
 {
-  "compilerOptions": {
-    "lib": ["dom", "es6"],
-    "target": "es2015",
-    "module": "es2015",
-    "moduleResolution": "node",
-    "declaration": false,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "outDir": "./built",
-    "rootDir": ".",
-    "typeRoots": [
-      "node_modules/@types"
+    "angularCompilerOptions": {
+        "genDir": "./aot",
+        "annotationsAs": "static fields",
+        "annotateForClosureCompiler": true
+    },
+    "compilerOptions": {
+        "module": "es2015",
+        "moduleResolution": "node",
+        "target": "es6",
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "experimentalDecorators": true,
+        "outDir": "./aot",
+        "declaration": true
+    },
+    "exclude": [
+        "vendor",
+        "node_modules",
+        "built",
+        "dist"
+    ],
+    "files": [
+        "src/app/app.module.ts",
+        "src/main.ts"
     ]
-  },
-  "files": [
-    "src/main.ts"
-  ],
-  "angularCompilerOptions": {
-    "annotationsAs": "static fields",
-    "annotateForClosureCompiler": true
-  },
-  "include": [
-    "src/app/**/*.ts"
-  ]
 }

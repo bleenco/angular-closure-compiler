@@ -6,19 +6,23 @@ OPTS=(
   "--create_source_map=%outname%.map"
   "--variable_renaming_report=dist/variable_renaming_report"
   "--property_renaming_report=dist/property_renaming_report"
+  "--warning_level=QUIET"
   "--rewrite_polyfills=false"
   "--js_module_root=node_modules"
   "--js_module_root=vendor"
-  "node_modules/zone.js/dist/zone.js"
+  node_modules/zone.js/dist/zone.js
   $(find vendor/rxjs -name "*.js")
-  $(find node_modules/@angular/{core,common,compiler,platform-browser}/index.js)
+  node_modules/@angular/{core,common,compiler,platform-browser}/index.js
   $(find node_modules/@angular/{core,common,compiler,platform-browser}/src -name "*.js")
-  $(find built -name "*.js")
-  "--entry_point=./built/src/main.js"
+  $(find aot -name "*.js")
+  "--entry_point=./aot/src/main.js"
+  "--output_manifest=dist/manifest.MF"
 )
 
-java -jar node_modules/google-closure-compiler/compiler.jar $(echo ${OPTS[*]}) > /dev/null 2>&1
-rm -rf aot built
+JVM_ARGS=""
+
+set -ex
+java $JVM_ARGS -jar node_modules/google-closure-compiler/compiler.jar $(echo ${OPTS[*]})
+
 gzip --keep -f dist/bundle.js
-bro --force --quality 10 --input dist/bundle.js --output dist/bundle.js.brotli
-ls -lh dist/bundle*
+ls -alh dist
