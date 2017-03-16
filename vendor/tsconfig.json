@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "rootDir": "../node_modules/rxjs",
+    "rootDir": "../node_modules/rxjs/src",
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,
