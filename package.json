@@ -4,23 +4,27 @@
   "description": "Angular Google Closure Compiler",
   "main": "index.js",
   "devDependencies": {
-    "@angular/common": "angular/common-builds#master-es2015",
-    "@angular/compiler": "angular/compiler-builds#master-es2015",
-    "@angular/compiler-cli": "angular/compiler-cli-builds#master-es2015",
-    "@angular/core": "angular/core-builds#master-es2015",
-    "@angular/platform-browser": "angular/platform-browser-builds#master-es2015",
-    "@angular/platform-server": "angular/platform-server-builds#master-es2015",
-    "@angular/tsc-wrapped": "angular/tsc-wrapped-builds#master-es2015",
-    "@types/node": "^7.0.5",
-    "google-closure-compiler": "^20170124.0.0",
-    "rxjs": "5.1.0",
-    "tsickle": "^0.21.1",
-    "typescript": "~2.1",
-    "zone.js": "angular/zone.js"
+    "@angular/common": "4.0.0-rc.3",
+    "@angular/compiler": "4.0.0-rc.3",
+    "@angular/compiler-cli": "4.0.0-rc.3",
+    "@angular/core": "4.0.0-rc.3",
+    "@angular/platform-browser": "4.0.0-rc.3",
+    "@angular/platform-server": "4.0.0-rc.3",
+    "@angular/tsc-wrapped": "4.0.0-rc.2",
+    "@types/node": "^7.0.8",
+    "google-closure-compiler": "^20170218.0.0",
+    "lite-server": "^2.3.0",
+    "rimraf": "^2.6.1",
+    "rxjs": "5.2.0",
+    "tsickle": "^0.21.6",
+    "typescript": "~2.2",
+    "zone.js": "~0.7.7"
   },
   "scripts": {
-    "clean": "rm -rf aot built dist",
-    "build": "ngc && ./closure.sh"
+    "clean": "rimraf dist lib src/ngfactory",
+    "build": "ngc && ./build.sh",
+    "prebuild": "npm run clean",
+    "server": "lite-server"
   },
   "license": "MIT"
 }

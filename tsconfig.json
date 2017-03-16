@@ -1,27 +1,21 @@
 {
-    "angularCompilerOptions": {
-        "genDir": "./aot",
-        "annotationsAs": "static fields",
-        "annotateForClosureCompiler": true
-    },
-    "compilerOptions": {
-        "module": "es2015",
-        "moduleResolution": "node",
-        "target": "es6",
-        "noImplicitAny": false,
-        "sourceMap": false,
-        "experimentalDecorators": true,
-        "outDir": "./aot",
-        "declaration": true
-    },
-    "exclude": [
-        "vendor",
-        "node_modules",
-        "built",
-        "dist"
-    ],
-    "files": [
-        "src/app/app.module.ts",
-        "src/main.ts"
-    ]
+  "compilerOptions": {
+    "module": "es2015",
+    "moduleResolution": "node",
+    "target": "es2015",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "experimentalDecorators": true,
+    "outDir": "lib",
+    "declaration": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "angularCompilerOptions": {
+    "genDir": "./src/ngfactory",
+    "entryModule": "./src/app/app.module#AppModule",
+    "annotationsAs": "static fields",
+    "annotateForClosureCompiler": true
+  }
 }
