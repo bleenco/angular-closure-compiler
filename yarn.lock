@@ -1771,8 +1771,8 @@ socket.io@1.6.0:
     socket.io-parser "2.3.1"
 
 source-map-support@^0.4.2:
-  version "0.4.12"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.12.tgz#f47d02bf01efaf0c160d3a37d038401b92b1867e"
+  version "0.4.13"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.13.tgz#9782e6f7deb424d5f173327a1879eb46453bdcd4"
   dependencies:
     source-map "^0.5.6"
 
