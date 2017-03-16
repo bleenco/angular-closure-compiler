@@ -10,20 +10,20 @@
     "@angular/core": "4.0.0-rc.3",
     "@angular/platform-browser": "4.0.0-rc.3",
     "@angular/platform-server": "4.0.0-rc.3",
-    "@angular/tsc-wrapped": "4.0.0-rc.2",
     "@types/node": "^7.0.8",
+    "filesize": "^3.5.6",
+    "glob": "^7.1.1",
     "google-closure-compiler": "^20170218.0.0",
     "lite-server": "^2.3.0",
     "rimraf": "^2.6.1",
     "rxjs": "5.2.0",
-    "tsickle": "^0.21.6",
     "typescript": "~2.2",
     "zone.js": "~0.7.7"
   },
   "scripts": {
     "clean": "rimraf dist lib src/ngfactory",
     "build:rxjs": "tsc -p vendor",
-    "build": "ngc && ./build.sh",
+    "build": "ngc && node ./build.js",
     "prebuild": "npm run clean && npm run build:rxjs",
     "server": "lite-server"
   },
