@@ -22,8 +22,9 @@
   },
   "scripts": {
     "clean": "rimraf dist lib src/ngfactory",
+    "build:rxjs": "tsc -p vendor",
     "build": "ngc && ./build.sh",
-    "prebuild": "npm run clean",
+    "prebuild": "npm run clean && npm run build:rxjs",
     "server": "lite-server"
   },
   "license": "MIT"
