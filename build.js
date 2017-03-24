@@ -10,7 +10,8 @@ const files = [
   'node_modules/@angular/core/@angular/core.js',
   'node_modules/@angular/common/@angular/common.js',
   'node_modules/@angular/compiler/@angular/compiler.js',
-  'node_modules/@angular/platform-browser/@angular/platform-browser.js'
+  'node_modules/@angular/platform-browser/@angular/platform-browser.js',
+  'vendor/zone_externs.js'
 ].concat(glob.sync('./vendor/rxjs/**/*.js')).concat(glob.sync('./lib/**/*.js'));
 
 const compiler = new closureCompiler({
@@ -23,6 +24,7 @@ const compiler = new closureCompiler({
   create_source_map: '%outname%.map',
   warning_level: 'QUIET',
   rewrite_polyfills: false,
+  dependency_mode: 'strict',
   js_module_root: [
     'node_modules/@angular/core',
     'node_modules/@angular/common',
