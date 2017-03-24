@@ -1,25 +1,27 @@
 ### Angular Closure Compiler Test
 
-This is a demo compiling Angular 4 application using Google Closure Compiler.
+This demo uses Google Closure Compiler for compiling Angular 4 applications.
 
-The result is really small build size, which means super fast page load.
+It produces a super optimized build size which results in a fast page load.
+
+### Prerequisites
+
+* Node.js 6.0.0+
+* Java SDKs (the best latest)
 
 ### Steps
 
-The `npm run build` command executes TypeScript compiler on RxJS library with
-configuration to target `es2015` which is needed for Closure Compiler.
+The `npm run build` command executes TypeScript compiler with RxJS library and targets `es2015` that is needed by Closure Compiler.
 
-When RxJS build is done, compiled library is stored in `vendor/rxjs` and the application bundling
-begins from node script which stores configuration for Closure Compiler in `build.js`.
+The successful RxJS build stores the library to `vendor/rxjs`. A node script starts an application bundling and stores the Closure Compiler configuration in `build.js`.
 
-If build is successful it returns build size less than a `100K` and gzipping this
-results in `32K` in size!
+A successful build amounts to less than `100K` in size and the final gzipped build has only `32K`!
 
-Note that in build `zone.js` is excluded and included inside `index.html` separately.
+We include `zone.js` in `index.html`.
 
 #### Run the build
 
-``` shell
+```sh
 $ npm install
 
 $ npm run build

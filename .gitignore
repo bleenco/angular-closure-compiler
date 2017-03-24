@@ -3,3 +3,8 @@ src/ngfactory
 lib
 dist
 vendor/rxjs
+npm-debug.log
+yarn-error.log
+.idea/
+.settings/
+.vscode
